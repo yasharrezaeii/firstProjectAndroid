@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="18dp"
+            android:paddingTop="12dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="@font/vazir_bold"
+                android:text="@string/test_tips"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginTop="24dp"
+                android:layout_height="wrap_content"
+                android:lines="7"
+                android:fontFamily="@font/vazir_light"
+                android:gravity="right|top"
+                android:justificationMode="inter_word"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/color_gray_dark"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp">
+
+                <Button
+                    android:id="@+id/dialog_test_tip_btnCancel"
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/bg_radiuse"
+                    android:fontFamily="@font/vazir_light"
+                    android:padding="0dp"
+                    android:text="@string/cancel"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/color_gray" />
+
+                <Button
+                    android:id="@+id/dialog_test_tip_btnStartTest"
+                    android:layout_width="140dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/bg_radiuse"
+                    android:fontFamily="@font/vazir"
+                    android:padding="0dp"
+                    android:text="@string/start_test"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/color_orange" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
