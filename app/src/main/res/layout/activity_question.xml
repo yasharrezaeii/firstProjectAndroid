@@ -47,7 +47,7 @@
         android:gravity="right">
 
         <TextView
-            android:id="@+id/activity_question_txtCounQuestion"
+            android:id="@+id/activity_question_txtNumberQuestionOfLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/vazir_medium"
