@@ -1,5 +1,5 @@
 package com.example.myapptestyahoo.Activity;
 
 public interface OnResult {
-    public void status(Object... objects);
+    public void success(Object... objects);
 }

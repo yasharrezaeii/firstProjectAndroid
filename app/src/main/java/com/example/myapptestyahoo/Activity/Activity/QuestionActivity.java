@@ -1,11 +1,13 @@
 package com.example.myapptestyahoo.Activity.Activity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -20,7 +22,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.myapptestyahoo.Activity.Data;
 import com.example.myapptestyahoo.Activity.Utils;
-import com.example.myapptestyahoo.Activity.model.Levels;
 import com.example.myapptestyahoo.Activity.model.Questions;
 import com.example.myapptestyahoo.R;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
@@ -106,10 +107,10 @@ public class QuestionActivity extends AppCompatActivity {
                 finish();
             else {
                 dialogEndTimeExam();
-                data.setLevel(new Levels((byte) 0, bundle.getByte("levelCount"),
-                                nineteen, wrongNumber, correctNumber, timeTookTest, bundle.getInt("termId"),
-                                (Integer) utils.getSharedPreferences("userId", "0", Utils.NAME_SHARED_PREFERENCES)),
-                        objects -> Log.i("status", (String) objects[0]));
+//                data.setLevel(new Levels((byte) 0, bundle.getByte("levelCount"),
+//                                nineteen, wrongNumber, correctNumber, timeTookTest, bundle.getInt("termId"),
+//                                (Integer) utils.getSharedPreferences("userId", "0", Utils.NAME_SHARED_PREFERENCES)),
+//                        objects -> Log.i("status", (String) objects[0]));
             }
         });
     }
@@ -117,7 +118,7 @@ public class QuestionActivity extends AppCompatActivity {
     private void setData() {
         numberQuestionOfLevel = 50; //get size questions from TestActivity
 //        numberQuestionOfLevel = bundle.getByte("numberQuestionOfLevel");
-        data.GetQuestions(0, 1, objects -> questions = (Questions[]) objects[0]);// get TermId and Leve from TestActivity
+        data.getQuestions(0, 1, objects -> questions = (Questions[]) objects[0]);// get TermId and Leve from TestActivity
 //        data.GetQuestions(bundle.getInt("termId"), bundle.getByte("levelCount"), objects -> questions = (Questions[]) objects[0]);
         txtnumberQuestionOfLevel.setText(String.format("%s/", numberQuestionOfLevel));
         prgCount.setMax(numberQuestionOfLevel);
@@ -211,13 +212,16 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void dialogEndTimeExam() {
-        new AlertDialog.Builder(QuestionActivity.this)
-                .setTitle("خاتمه آزمون")
-                .setMessage("آیا قصد خاتمه آزمون را دارید؟")
-                .setPositiveButton("بله", (dialog, which) -> time = 1)
-                .setNegativeButton("خیر", null)
-                .setCancelable(false)
-                .show();
+        Dialog dialog = new Dialog(QuestionActivity.this);
+        dialog.setContentView(R.layout.custom_dialog_finish);
+        dialog.setCancelable(false);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.findViewById(R.id.custom_dialog_finish_btn_yes).setOnClickListener(v -> {
+            time = 1;
+            dialog.dismiss();
+        });
+        dialog.findViewById(R.id.custom_dialog_finish_btn_cancel).setOnClickListener(v -> dialog.dismiss());
+        dialog.show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

@@ -9,4 +9,8 @@
     <string name="start_test">شروع آزمون</string>
     <string name="cancel">انصراف</string>
     <string name="question">سوال</string>
+    <string name="dialogTitleFinish">پایان آزمون</string>
+    <string name="dialogTextFinish">آیا از پایان آزمون اطمینان دارید؟</string>
+    <string name="dialogYesFinish">بله</string>
+    <string name="dialogNoFinish">خیر</string>
 </resources>

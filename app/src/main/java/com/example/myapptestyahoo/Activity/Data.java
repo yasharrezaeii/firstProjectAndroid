@@ -12,8 +12,7 @@ public class Data {
         this.context = context;
     }
 
-    public void GetQuestions(int termId, int level, OnResult onResult) {
-
+    public void getQuestions(int termId, int level, OnResult onResult) {
         Questions[] questions = new Questions[50];
         questions[0] = new Questions(0, "سوال یک", "الف", "ب", "پ", "چ", (byte) 3, true, 0);
         questions[1] = new Questions(1, "سوال دو", "جواب1", "جواب2", "جواب3", "جواب4", (byte) 1, true, 0);
@@ -28,10 +27,10 @@ public class Data {
         for (int i = 10; i < 50; i++)
             questions[i] = new Questions(i, "title", "1", "2", "3", "4", (byte) 2, true, 0);
 
-        onResult.status((Object) questions);
+        onResult.success((Object) questions);
     }
 
     public void setLevel(Levels level, OnResult onResult) {
-        onResult.status();
+        onResult.success();
     }
 }
