@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape4"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/custom_dialog_finish_txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/vazir_bold"
+        android:text="@string/dialogTitleFinish"
+        android:textColor="@android:color/black"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/custom_dialog_finish_txt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/vazir_light"
+        android:text="@string/dialogTextFinish"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/custom_dialog_finish_btn_cancel"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:background="@drawable/shape7"
+            android:fontFamily="@font/vazir_light"
+            android:text="@string/dialogNoFinish"
+            android:textColor="@android:color/white"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/custom_dialog_finish_btn_yes"
+            android:layout_width="120sp"
+            android:layout_height="45sp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/shape3"
+            android:fontFamily="@font/vazir_light"
+            android:text="@string/dialogYesFinish"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

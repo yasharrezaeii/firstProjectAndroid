@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    tools:context=".Activity.QuestionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/activity_question_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layoutDirection="rtl"
+        android:theme="@style/toolbar"
+        app:contentInsetStart="0dp">
+
+        <Button
+            android:id="@+id/activity_question_btnEndTest"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_exit"
+            android:fontFamily="@font/vazir"
+            android:text="@string/end_test"
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/activity_question_txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vazir_bold"
+            android:gravity="right"
+            android:text="@string/test"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/activity_question_txtNumberQuestionOfLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/vazir_medium"
+            android:text="50/"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/activity_question_txtCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/vazir_medium"
+            android:text="01"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/vazir_light"
+            android:text="@string/question"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/activity_question_prgCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="1"
+        android:scaleX="-1"
+        app:indicatorColor="@color/color_purple"
+        app:trackCornerRadius="20dp"
+        app:trackThickness="8dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp">
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/activity_question_circularProgressbar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            app:cpb_background_progressbar_color="#b6bbd8"
+            app:cpb_background_progressbar_width="2dp"
+            app:cpb_progress="70"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progressbar_color="@color/color_orange"
+            app:cpb_progressbar_width="6dp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_question_txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/vazir_medium"
+            android:text="15:21"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/activity_question_cardQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:strokeColor="@android:color/darker_gray"
+        app:strokeWidth="1dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/activity_question_txtTextQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/vazir"
+                android:gravity="right"
+                android:justificationMode="inter_word"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/color_gray_dark"
+                android:textSize="14sp" />
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1">
+
+        <RadioGroup
+            android:id="@+id/activity_question_rgAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/activity_question_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_radio"
+                android:button="@drawable/bg_button_radio"
+                android:buttonTint="@drawable/bg_button_radio_color"
+                android:fontFamily="@font/vazir_light"
+                android:text="گزینه اول برای سوال اول"
+                android:textColor="@drawable/bg_text_color_radio_button"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/activity_question_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_radio"
+                android:button="@drawable/bg_button_radio"
+                android:buttonTint="@drawable/bg_button_radio_color"
+                android:fontFamily="@font/vazir_light"
+                android:text="گزینه دوم برای سوال اول"
+                android:textColor="@drawable/bg_text_color_radio_button"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/activity_question_rb3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_radio"
+                android:button="@drawable/bg_button_radio"
+                android:buttonTint="@drawable/bg_button_radio_color"
+                android:fontFamily="@font/vazir_light"
+                android:text="گزینه سوم برای سوال اول"
+                android:textColor="@drawable/bg_text_color_radio_button"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/activity_question_rb4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_radio"
+                android:button="@drawable/bg_button_radio"
+                android:buttonTint="@drawable/bg_button_radio_color"
+                android:fontFamily="@font/vazir_light"
+                android:justificationMode="inter_word"
+                android:text="گزینه چهارم برای سوال اول"
+                android:textColor="@drawable/bg_text_color_radio_button"
+                android:textSize="16sp" />
+        </RadioGroup>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/activity_question_btnPreviousQuestion"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight=".3"
+            android:background="@drawable/bg_radiuse_outline"
+            android:fontFamily="@font/vazir_medium"
+            android:text="@string/previous"
+            android:textColor="@color/color_purple"
+            android:textSize="16sp"/>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight=".4" />
+
+        <Button
+            android:id="@+id/activity_question_btnNextQuestion"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight=".3"
+            android:background="@drawable/bg_radiuse"
+            android:fontFamily="@font/vazir_medium"
+            android:text="@string/next"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/color_purple" />
+    </LinearLayout>
+
+</LinearLayout>
